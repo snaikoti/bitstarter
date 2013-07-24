@@ -5,8 +5,7 @@ app.use(express.logger());
 
 app.get('/', function(request, response) {
   var file = fs.readFile('./index.html');
-  var output = buf.toString('utf8',0,file.length);
-  response.send(output);
+  response.send(file);
 });
 
 var port = process.env.PORT || 5000;
